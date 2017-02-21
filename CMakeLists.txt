@@ -23,9 +23,8 @@ message(STATUS "${RAPP_ROBOT_VISION}")
 set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 find_library(RAPP_LIBRARY NAMES rapp REQUIRED)
 
-include_directories(${RAPP_INCLUDE_DIRS}/rapp)
-
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${Rapp_DIR} ${RappRobots_DIR})
+#include_directories(${RAPP_INCLUDE_DIRS}/rapp)
+#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${Rapp_DIR} ${RappRobots_DIR})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++1y")
 
 add_executable(learn_object main.cpp)
