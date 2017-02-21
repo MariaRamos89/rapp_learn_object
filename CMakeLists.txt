@@ -20,10 +20,10 @@ message(STATUS "${RAPP_ROBOT_NAVIGATION}")
 find_library(RAPP_ROBOT_VISION NAMES rapp_robot_vision)
 message(STATUS "${RAPP_ROBOT_VISION}")
 
-set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
-find_library(RAPP_LIBRARY NAMES rapp REQUIRED)
+#set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+#find_library(RAPP_LIBRARY NAMES rapp REQUIRED)
 
-#include_directories(${RAPP_INCLUDE_DIRS}/rapp)
+include_directories(${RAPP_INCLUDE_DIRS}/rapp)
 #set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${Rapp_DIR} ${RappRobots_DIR})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++1y")
 
