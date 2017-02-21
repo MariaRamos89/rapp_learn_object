@@ -29,7 +29,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++1y")
 
 add_executable(learn_object main.cpp)
 
-set(RAPP_LIBRARIES ${RAPP} 
+set(RAPP_LIBRARIES ${RAPP_LIBRARY} 
 	           ${RAPP_ROBOT_COMMUNICATION}
 		   ${RAPP_ROBOT_INFO}
 		   ${RAPP_ROBOT_LOCALIZATION}
