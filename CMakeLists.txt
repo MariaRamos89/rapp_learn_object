@@ -19,8 +19,6 @@ find_library(RAPP_ROBOT_VISION NAMES rapp_robot_vision)
 include_directories(${RAPP_INCLUDE_DIRS}/rapp)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${Rapp_DIR} ${RappRobots_DIR})
-include(RappMacros)
-
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++1y")
 
 add_executable(learn_object main.cpp)
