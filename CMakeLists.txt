@@ -6,6 +6,7 @@ find_package(OpenCV REQUIRED)
 find_package(RappRobots REQUIRED)
 find_package(Boost COMPONENTS system thread random REQUIRED)
 find_package(Threads REQUIRED)
+find_package(RAPP REQUIRED)
 
 message(STATUS "${RAPP_LIBRARY}")
 find_library(RAPP_ROBOT_COMMUNICATION NAMES rapp_robot_communication)
