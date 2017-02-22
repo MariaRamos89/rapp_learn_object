@@ -14,9 +14,6 @@ endif()
 
 find_package(Threads REQUIRED)
 #find_package(Rapp REQUIRED)
-set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
-find_library(RAPP_LIBRARIES_STATIC NAMES rapp)
-
 message(STATUS "${RAPP_LIBRARIES_STATIC}")
 find_library(RAPP_ROBOT_COMMUNICATION NAMES rapp_robot_communication)
 message(STATUS "${RAPP_ROBOT_COMMUNICATION}")
@@ -29,11 +26,13 @@ message(STATUS "${RAPP_ROBOT_NAVIGATION}")
 find_library(RAPP_ROBOT_VISION NAMES rapp_robot_vision)
 message(STATUS "${RAPP_ROBOT_VISION}")
 
+set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+find_library(RAPP_LIBRARIES_STATIC NAMES rapp)
 
 #include_directories(${RAPP_INCLUDE_DIRS}/rapp)
 include_directories(${CMAKE_INSTALL_PREFIX}/include/rapp)
 #set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${Rapp_DIR} ${RappRobots_DIR})
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++1y")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=gnu++1y")
 
 add_executable(learn_object main.cpp)
 
@@ -49,4 +48,4 @@ set(RAPP_LIBRARIES ${RAPP_LIBRARIES_STATIC}
 
 target_link_libraries(learn_object ${RAPP_LIBRARIES} ${OpenCV_LIBS})
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}-static-libstdc++ -static-libgcc")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++1y -Wall -fPIC -Os -s -O2 -march=atom -mtune=atom -mfpmath=sse")
+set(CMAKE_CXX_FLAGS "--std=gnu++1y -march=atom -mtune=atom -mfpmath=sse")
