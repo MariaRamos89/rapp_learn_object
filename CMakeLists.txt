@@ -14,6 +14,7 @@ endif()
 
 find_package(Threads REQUIRED)
 #find_package(Rapp REQUIRED)
+set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 find_library(RAPP_LIBRARIES_STATIC NAMES rapp)
 
 message(STATUS "${RAPP_LIBRARIES_STATIC}")
