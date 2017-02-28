@@ -26,7 +26,7 @@ message(STATUS "${RAPP_ROBOT_NAVIGATION}")
 find_library(RAPP_ROBOT_VISION NAMES rapp_robot_vision)
 message(STATUS "${RAPP_ROBOT_VISION}")
 
-set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+#set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 find_library(RAPP_LIBRARIES_STATIC NAMES rapp)
 
 #include_directories(${RAPP_INCLUDE_DIRS}/rapp)
